@@ -1,0 +1,46 @@
+extends layout
+
+block content
+	a( href="/?page="+(page-1) ) <
+	article= text
+	div.number
+		if page>0
+			if page===1 || page===2
+				a( href="/?page=1") 1
+				| ,
+				a( href="/?page=2") 2
+				| ,
+				a( href="/?page=3") 3
+			else if page===3
+				a( href="/?page=1") 1
+				| ...
+				a( href="/?page=2") 2
+				| ,
+				a( href="/?page=3") 3
+				| ,
+				a( href="/?page=4") 4
+			else if page===4
+				a( href="/?page=1") 1
+				| ,
+				a( href="/?page=2") 2
+				| ...
+				a( href="/?page=3") 3
+				| ,
+				a( href="/?page=4") 4
+				| ,
+				a( href="/?page=5") 5
+			else 
+				a( href="/?page=1") 1
+				| ,
+				a( href="/?page=2") 2
+				| ,
+				a( href="/?page=3") 3
+				| ...
+				a( href="/?page=" + (page-1) ) #{page-1}
+				| ,
+				a( href="/?page=" + (page) ) #{page}
+				| ,
+				a( href="/?page=" + (page+1) ) #{page+1}
+
+	// div( class="num" )= page
+	a( href="/?page="+(page+1) ) >
